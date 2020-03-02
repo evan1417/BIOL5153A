@@ -1,0 +1,18 @@
+#! /bin/bash
+
+#assn04_3
+
+#PBS -N BLASTN
+#PBS -q student8core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.3.out
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+blastn -query watermelon_files/watermelon_nt/nad4L.fasta -subject watermelon_files/watermelon.fsa -out anderson_assn04.3.out

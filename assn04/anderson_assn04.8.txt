@@ -1,0 +1,13 @@
+how many repeats do you find under the three settings?
+	Default - 31,292
+	Somewhat Sensitive - 2,158
+	Sensitive - 1,358
+
+What is the size of the smallest repeat under each setting?
+	Default - 28
+	Somewhat Sensitive - 18
+	Sensitive - 33
+
+What parameter does this size directly relate to?
+	The size of the repeat directly relates to the sensitivity of the paramater ran, the more sensitive - the smaller the repeat size gets to hoen in on the correct sequence. 
+

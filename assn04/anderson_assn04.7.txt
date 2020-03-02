@@ -1,0 +1,1 @@
+As the database increases, the raw score increases due to the more sequences you are pulling from. The e-value should go up as well since the chance for making mismatches increases with increasing database values. The bit score however does not depend on the size of the database since it is the minimum sequence data base size that will find that sequence of interest by chance. 

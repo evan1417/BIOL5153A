@@ -1,0 +1,114 @@
+#! /bin/bash
+
+#assn04_1
+
+#PBS -N BLASTN
+#PBS -q student8core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.1.out
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+blastn -query watermelon_files/watermelon_nt/nad4L.fasta -subject watermelon_files/watermelon_nt/nad4L.fasta > anderson_assn04.1.out
+
+#exited razor 
+
+scp eta003@razor.uark.edu:anderson_assn04.1.out ~/Desktop/Python_Homework/assn04
+
+
+#assn04_2
+
+#PBS -N BLASTN
+#PBS -q student8core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.2.out
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+blastn -query watermelon_files/watermelon_nt/nad4L.fasta -subject watermelon_files/mt_genomes/citrullus_lanatus.fasta -out anderson_assn04.2.out
+
+
+
+#assn04_3
+
+#PBS -N BLASTN
+#PBS -q student8core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.3.out
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+blastn -query watermelon_files/watermelon_nt/nad4L.fasta -subject watermelon_files/watermelon.fsa -out anderson_assn04.3.out
+
+
+#assn04_4
+
+#PBS -N BLASTN
+#PBS -q student8core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.4.out
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+blastn -query watermelon_files/watermelon_nt/nad4L.fasta -subject watermelon_files/mt_genomes/mt.fasta -out anderson_assn04.4.out
+
+
+#assn04_5
+
+#PBS -N BLASTN
+#PBS -q student8core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.5.out
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+blastn -query 'watermelon_files/watermelon_nt/nad4L.fasta' -remote -db nr -out anderson_assn04.5.out 
+
+
+#assn04_6
+
+#PBS -N TBLASTX
+#PBS -q debug16core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.6.out
+#PBS -l nodes=1:ppn=6
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+tblastx -query watermelon_files/watermelon_nt/nad4L.fasta -subject watermelon_files/watermelon.fsa > anderson_assn04.6.out
+

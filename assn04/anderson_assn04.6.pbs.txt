@@ -1,0 +1,17 @@
+#! /bin/bash
+
+#PBS -N TBLASTX
+#PBS -q debug16core
+#PBS -j oe
+#PBS -m abe
+#PBS -M eta003@uark.edu
+#PBS -o anderson_assn04.6.out
+#PBS -l nodes=1:ppn=6
+#PBS -l walltime=00:00:20:00
+
+cd $PBS_O_WORKDIR
+
+module load blast/2.6.0+  
+
+tblastx -query watermelon_files/watermelon_nt/nad4L.fasta -subject watermelon_files/watermelon.fsa > anderson_assn04.6.out
+
