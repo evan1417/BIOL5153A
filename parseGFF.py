@@ -1,16 +1,26 @@
 #! /usr/bin/env python3
 
+# importing csv module 
+import csv
+
+#defining file 
+my_file = "/users/evan/desktop/python_homework/watermelon.gff"
+
 # storing each line as a list variable
 watermelon = []
 
 # opening the file and reading it
-with open("/users/evan/desktop/watermelon_files/watermelon.gff", 'rt') as myfile:
-    # reading the file
-    for line in myfile:
-        gene = line.split()[10]  # get gene name from split line
+with open(my_file, "r") as watermelon:
+        
+    #create a csv reader object
+    reader = csv.reader(watermelon, delimiter = "\t")
+        
+    for line in reader: 
+        # skip blank lines 
+        if not line: 
+            continue 
+        else:
+            # data line where information is taken from the file and printed
+            print(line[3], line[4]) 
 
-        if not gene == "similar":  # ignore similar
-            watermelon.append(gene)
 
-watermelon.sort()  # sort list
-print(watermelon)
