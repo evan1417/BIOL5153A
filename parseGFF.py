@@ -34,16 +34,20 @@ with open(args.gff, "r") as gff_file: # opening the file and reading it
             if feature != "CDS":
                 continue # from column 2 it reads if the column contains the phrase CDS and if not then it skips it in STDOUT
             else: 
-                start = line [3]
-                end = line [4] 
-                print(start, end)
+                start = int(line [3])
+                end = int(line[4]) 
+                strand = line[6]
+                attributes = line[8]
+                
+                #extract the sequence from the lines subtracting 1 ensures you have the right start coordinate
+                sequences = genome.seq[start-1:end]
 
-for sequence in SeqIO.parse(args.fasta, "fasta"):
-    g_count = sequence.count("G")
-    c_count = sequence.count("C")
-    length = len(sequence)
-    gc_content = (c_count + g_count / length)
-    gc_round = round(gc_content, 2)
-print(str(gc_round))
-            
-            # calculate and print the GC content for that substring to two decimal
+                # calculating the gc content
+                g_count = sequences.count("G")
+                c_count = sequences.count("C")
+                length = len(sequences)
+                gc = (c_count + g_count)/length
+                gc_round = round(gc, 2)
+                
+                print(attributes)
+                print(gc_round)
