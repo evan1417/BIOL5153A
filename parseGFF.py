@@ -48,7 +48,7 @@ def parse_gff(genome):
 
 				# test whether this is a CDS feature
 				# if it is a CDS feature, then extract the substring/sequence
-				if feature_type == 'CDS':
+				if feature_type == 'CDS' or feature_type == 'tRNA':
 					# extract this feature from the genome
 					feature_seq = genome[start-1:end]
 
